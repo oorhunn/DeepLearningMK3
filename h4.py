@@ -18,10 +18,10 @@ from keras.utils import to_categorical
 #
 # test_data -= mean
 # test_data /= std
-
-# Building Model
-
-
+#
+# #Building Model
+#
+#
 # def build_model():
 #     model = models.Sequential()
 #     model.add(layers.Dense(64, activation='relu',
@@ -34,14 +34,14 @@ from keras.utils import to_categorical
 # model = build_model()
 # model.fit(train_data, train_targets, epochs=80, batch_size=16, verbose=0)
 # test_mse_score, test_mae_score = model.evaluate(test_data, test_targets)
-
+#
 # k = 4
 # num_val_samples = len(train_data) // k
 # num_epochs = 500
 # all_scores = []
 # all_mae_histories = []
-
-# K fold Method implement
+#
+# #K fold Method implement
 # for i in range(k):
 #     print('processing fold #', i)
 #     val_data = train_data[i * num_val_samples: (i + 1) * num_val_samples]
@@ -68,12 +68,12 @@ from keras.utils import to_categorical
 # plt.xlabel('Epochs')
 # plt.ylabel('Validation MAE')
 # plt.show()
-
-
-# According to this plot, validation MAE stops improving significantly after 80 epochs.
-# Past that point, you start overfitting
-
-
+#
+#
+# # According to this plot, validation MAE stops improving significantly after 80 epochs.
+# # Past that point, you start overfitting
+#
+#
 # def smooth_curve(points, factor=0.9):
 #     smoothed_points = []
 #     for point in points:
@@ -83,8 +83,8 @@ from keras.utils import to_categorical
 #         else:
 #             smoothed_points.append(point)
 #     return smoothed_points
-
-
+#
+#
 # smooth_mae_history = smooth_curve(average_mae_history[10:])
 # plt.plot(range(1, len(smooth_mae_history) + 1), smooth_mae_history)
 # plt.xlabel('Epochs')
